@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Lampa : MonoBehaviour
 {
-
+//turn light on when player is inside house 
     public Light lampa;
 
 
