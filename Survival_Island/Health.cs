@@ -30,7 +30,7 @@ public class Zdrowie : MonoBehaviour
             ObecneHP = 0;
     }
 
-
+//Represetns helth belt
     void OnGUI()
     {
         if (gameObject.name == "Gracz")
