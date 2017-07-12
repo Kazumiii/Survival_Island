@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Death : MonoBehaviour
 {
+
+//Dispaly Game Ovet text when  player's helath is less than 0
     public GUIText wiad;
 
     void OnTriggerEnter(Collider col)
@@ -25,7 +27,7 @@ public class Death : MonoBehaviour
     {
         if (!wiad.enabled)
             wiad.enabled = true;
-        wiad.text = "Koniec Gry";
+        wiad.text = "Game Over";
 
         yield return new WaitForSeconds(2);
 
