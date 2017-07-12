@@ -24,7 +24,7 @@ public class Przeciwnik_Poruszanie : MonoBehaviour
     {
 
         cdn += Time.deltaTime;
-
+/Checking distance from player to enemy, in dependence distane  enemy will follow  player
         distance = Vector3.Distance(transform.position, gracz.position);
         Debug.Log(distance);
         if (distance < 10)
@@ -41,6 +41,7 @@ public class Przeciwnik_Poruszanie : MonoBehaviour
             {
                 if (cdn > 2)
                 {
+                //if player's distane is less then 2 the enemy will stat shooting
                     GameObject p = Instantiate(pocisk, lufka.position, lufka.rotation) as GameObject;
                     GameObject p2 = Instantiate(pocisk2, lufka2.position, lufka2.rotation) as GameObject;
                     p.rigidbody.velocity = -transform.forward * 500 * Time.deltaTime;
