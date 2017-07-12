@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Drzwi : MonoBehaviour
 {
-
+//Detect  collision between player and door, display audio file 
     public AudioClip OpenDoor;
     public AudioClip CloseDoor;
 
