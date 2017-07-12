@@ -3,7 +3,7 @@ using System.Collections;
 
 public class OtwarcieBamy : MonoBehaviour
 {
-
+//Detection collison Player-gate and then  opening Gate
     public AudioClip OpenDoor;
     public AudioClip Dzwiek;
     public GameObject Drzwi;
@@ -28,7 +28,7 @@ public class OtwarcieBamy : MonoBehaviour
     }
 
 
-
+//load sound file during opening gate
 
     IEnumerator Door()
     {
