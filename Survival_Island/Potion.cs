@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mikstura : MonoBehaviour
 {
-
+//use potion to recover  player's health
 
     void OnTriggerEnter(Collider col)
     {
