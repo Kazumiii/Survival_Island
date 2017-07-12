@@ -4,7 +4,7 @@ using System.Collections;
 public class Menu : MonoBehaviour
 {
 
-    //goup settings
+    //group settings
     public Rect PolozenieUstawien;
     public static bool WyswietlMenu = false;
 
@@ -29,8 +29,8 @@ public class Menu : MonoBehaviour
     public static float PoziomGłosności;
     public static bool Wyciszenie = false;
     public static bool WłączenieGlosnosci = false;
-    public static string Wycicz_Tekst = "Wycisz";
-    public static string WlaczMuzyke_tekst = "Włącz muzyke";
+    public static string Wycicz_Tekst = "Mute";
+    public static string WlaczMuzyke_tekst = "Shut down music";
 
 
     //Graphics
@@ -41,7 +41,7 @@ public class Menu : MonoBehaviour
     public static bool Pelnyekran = false;
     public static string[] ListaJakosciGrafiki = new string[]
     {
-        "Najszybsza","Szybka","Prosta","Dobra","Piękna","Przepiekna",
+        "Fastest","Fast","Simple","Good","Beautiful",
     };
     public static string[] ListaRozdzielczosc = new string[]
     {
@@ -58,30 +58,32 @@ public class Menu : MonoBehaviour
     {
 
         // MENU
-        if (Obecnepolozenie == "Menu główne")
+        if (Obecnepolozenie == "Menu ")
         {
 
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 270), "");
-            if (GUI.Button(new Rect(10, 10, 200, 30), "Nowa Gra"))
+            if (GUI.Button(new Rect(10, 10, 200, 30), "New Game
             {
+            //Load new game
                 Application.LoadLevel(1);
             }
 
-            if (GUI.Button(new Rect(10, 45, 200, 30), "Ustawienia"))
+            if (GUI.Button(new Rect(10, 45, 200, 30), "Settings
             {
 
-                Obecnepolozenie = "Ustawienia";
+                Obecnepolozenie = "Settings
 
             }
-            if (GUI.Button(new Rect(10, 80, 200, 30), "Wyjście"))
-            {
+            if (GUI.Button(new Rect(10, 80, 200, 30), "Exit
+            {//Turn the game off
                 Application.Quit();
             }
 
             if (GUI.Button(new Rect(10, 135, 200, 100), "", style))
             {
-                Obecnepolozenie = "Logo";
+               //Load game's logo
+               Obecnepolozenie = "Logo";
             }
             GUI.EndGroup();
         }
@@ -98,9 +100,9 @@ public class Menu : MonoBehaviour
 
 
             GUI.Label(new Rect(5, 90, 190, 140), Opis);
-            if (GUI.Button(new Rect(0, 270, 220, 30), "Powrót"))
+            if (GUI.Button(new Rect(0, 270, 220, 30), "Back
             {
-                Obecnepolozenie = "Menu główne";
+                Obecnepolozenie = "Menu ";
             }
             GUI.EndGroup();
         }
@@ -108,25 +110,25 @@ public class Menu : MonoBehaviour
 
 
         //Settings
-        if (Obecnepolozenie == "Ustawienia")
+        if (Obecnepolozenie == "Settings
         {
 
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 150), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Ustawienia gry");
-            if (GUI.Button(new Rect(10, 35, 200, 30), "Grafika"))
+            GUI.Box(new Rect(0, 0, 220, 30), "Settings");
+            if (GUI.Button(new Rect(10, 35, 200, 30), "Graphic");
             {
-                Obecnepolozenie = "Grafika";
+                Obecnepolozenie = "Graphic";
             }
-            if (GUI.Button(new Rect(10, 70, 200, 30), "Dźwięk"))
+            if (GUI.Button(new Rect(10, 70, 200, 30), "Sound"));
             {
-                Obecnepolozenie = "Dźwięk";
+                Obecnepolozenie = "Sound";
             }
-            if (GUI.Button(new Rect(10, 105, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 105, 200, 30), "Back"))
             {
 
                 if (Poziom == 0)
-                    Obecnepolozenie = "Menu główne";
+                    Obecnepolozenie = "Menu ";
                 else if (Poziom == 1)
                 {
                     Obecnepolozenie = "Scena1";
@@ -149,9 +151,9 @@ public class Menu : MonoBehaviour
 
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 300), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Misja:" + NumerMisji);
+            GUI.Box(new Rect(0, 0, 220, 30), "Quest"+NumerMisji);
             GUI.TextArea(new Rect(10, 35, 200, 100), OpisMisji);
-            if (GUI.Button(new Rect(10, 140, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 140, 200, 30), "Back"))
             {
 
                 Obecnepolozenie = "Scena1";
@@ -163,25 +165,25 @@ public class Menu : MonoBehaviour
 
         //Graphic settings
 
-        if (Obecnepolozenie == "Grafika")
+        if (Obecnepolozenie == "Graphic)
         {
 
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 170), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Grafika");
-            if (GUI.Button(new Rect(10, 35, 200, 30), "Jakość grafikia"))
+            GUI.Box(new Rect(0, 0, 220, 30), "Graphic);
+            if (GUI.Button(new Rect(10, 35, 200, 30), "Graphic quality"))
             {
-                Obecnepolozenie = "Jakość grafiki";
+                Obecnepolozenie = "Graphc quality";
             }
-            if (GUI.Button(new Rect(10, 70, 200, 30), "Rozdzielczość"))
+            if (GUI.Button(new Rect(10, 70, 200, 30), "Resolution"))
             {
-                Obecnepolozenie = "Rozdzielczosc grafiki";
+                Obecnepolozenie = "Graphic resolution";
             }
-            if (GUI.Button(new Rect(10, 115, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 115, 200, 30), "Back")
             {
 
 
-                Obecnepolozenie = "Ustawienia";
+                Obecnepolozenie = "Settings";
 
             }
             GUI.EndGroup();
@@ -191,34 +193,34 @@ public class Menu : MonoBehaviour
 
         //Sound settings
 
-        if (Obecnepolozenie == "Dźwięk")
+        if (Obecnepolozenie == "Sound")
         {
 
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 190), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Dźwięk");
+            GUI.Box(new Rect(0, 0, 220, 30), "Sound");
 
             gameObject.audio.volume = PoziomGłosności;
             PoziomGłosności = GUI.HorizontalScrollbar(new Rect(110, 40, 100, 30), PoziomGłosności, 0.1f, 0.0f, 1.1f);
             Wyciszenie = GUI.Toggle(new Rect(110, 80, 20, 20), Wyciszenie, "");
             if (WłączenieGlosnosci = GUI.Toggle(new Rect(110, 105, 20, 20), WłączenieGlosnosci, ""))
             {
-                WlaczMuzyke_tekst = "Wyłącz muzke";
+                WlaczMuzyke_tekst = "Shout music down";
             }
             else
             {
-                WlaczMuzyke_tekst = "Włącz muzyke";
+                WlaczMuzyke_tekst = "Turn music on";
             }
 
 
-            GUI.Label(new Rect(10, 40, 100, 30), "Głośność" + " " + PoziomGłosności.ToString("F2"));
+            GUI.Label(new Rect(10, 40, 100, 30), "Loudility"+" " + PoziomGłosności.ToString("F2"));
             GUI.Label(new Rect(10, 75, 100, 30), Wycicz_Tekst);
             GUI.Label(new Rect(10, 110, 100, 30), WlaczMuzyke_tekst);
 
-            if (GUI.Button(new Rect(10, 140, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 140, 200, 30), "Back")
             {
 
-                Obecnepolozenie = "Ustawienia";
+                Obecnepolozenie = "Settings";
             }
         }
         GUI.EndGroup();
@@ -228,11 +230,11 @@ public class Menu : MonoBehaviour
 
 
         //Graphic quality
-        if (Obecnepolozenie == "Jakość grafiki")
+        if (Obecnepolozenie == "Graphic quality"
         {
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 190), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Jakość grafiki");
+            GUI.Box(new Rect(0, 0, 220, 30), "Graphic quality");
 
             ObecnaWybranaJakoscGrafiki = GUI.SelectionGrid(new Rect(10, 44, 200, 100), ObecnaWybranaJakoscGrafiki, ListaJakosciGrafiki, 2);
 
@@ -259,10 +261,10 @@ public class Menu : MonoBehaviour
             }
 
 
-            if (GUI.Button(new Rect(10, 150, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 150, 200, 30), "Back")
             {
 
-                Obecnepolozenie = "Grafika";
+                Obecnepolozenie = "Graphic";
             }
             GUI.EndGroup();
 
@@ -270,11 +272,11 @@ public class Menu : MonoBehaviour
 
 
         //Graphic resolution
-        if (Obecnepolozenie == "Rozdzielczosc grafiki")
+        if (Obecnepolozenie == "Graphic resolution")
         {
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 250), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Rozdzielczość grafiki");
+            GUI.Box(new Rect(0, 0, 220, 30), "Graphic resolution");
 
             ObecnaWybranaRozdzielczosc = GUI.SelectionGrid(new Rect(10, 44, 200, 100), ObecnaWybranaRozdzielczosc, ListaRozdzielczosc, 2);
 
@@ -363,19 +365,19 @@ public class Menu : MonoBehaviour
 
 
         //Load game
-        if (Obecnepolozenie == "Wczytaj gre")
+        if (Obecnepolozenie == "Load game")
         {
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 250), "");
-            GUI.Box(new Rect(0, 0, 220, 30), "Wczytaj gre");
+            GUI.Box(new Rect(0, 0, 220, 30), "Load game");
 
 
-            if (GUI.Button(new Rect(10, 160, 200, 30), "Powrót"))
+            if (GUI.Button(new Rect(10, 160, 200, 30), "Back"))
             {
 
 
                 if (Poziom == 0)
-                    Obecnepolozenie = "Menu główne";
+                    Obecnepolozenie = "Menu ";
                 else if (Poziom == 1)
                 {
                     Obecnepolozenie = "Scena1";
@@ -394,7 +396,7 @@ public class Menu : MonoBehaviour
             Poziom = 1;
             GUI.BeginGroup(PolozenieUstawien);
             GUI.Box(new Rect(0, 0, 220, 440), "");
-            if (GUI.Button(new Rect(10, 10, 200, 30), "Powrot do gry"))
+            if (GUI.Button(new Rect(10, 10, 200, 30), "Back to game"))
             {
                 WyswietlMenu = false;
                 Gracz.CzyStrzelac = true;
@@ -402,31 +404,31 @@ public class Menu : MonoBehaviour
                 gameObject.GetComponentInChildren<Camera>().GetComponent<MouseLook>().sensitivityY = 10;
                 Time.timeScale = 1;
             }
-            if (GUI.Button(new Rect(10, 45, 200, 30), "Zapisz grę"))
+            if (GUI.Button(new Rect(10, 45, 200, 30), "Save"))
             {
                 Zapisz_gre();
                 WyswietlMenu = false;
 
             }
-            if (GUI.Button(new Rect(10, 80, 200, 30), "Wczytaj grę"))
+            if (GUI.Button(new Rect(10, 80, 200, 30), "Load game"))
             {
                 Wczytaj_gre();
 
             }
-            if (GUI.Button(new Rect(10, 115, 200, 30), "Opis misji"))
+            if (GUI.Button(new Rect(10, 115, 200, 30), "Quest description"))
             {
-                Obecnepolozenie = "Opis misji";
+                Obecnepolozenie = "Quest description";
                 WyswietlMenu = false;
 
             }
-            if (GUI.Button(new Rect(10, 150, 200, 30), "Ustawienia gry"))
+            if (GUI.Button(new Rect(10, 150, 200, 30), "Settings"))
             {
 
-                Obecnepolozenie = "Ustawienia";
+                Obecnepolozenie ="Settings"
                 WyswietlMenu = false;
             }
 
-            if (GUI.Button(new Rect(10, 185, 200, 30), "Powrót do menu"))
+            if (GUI.Button(new Rect(10, 185, 200, 30), "Back to game"))
             {
                 Application.LoadLevel(0);
                 WyswietlMenu = false;
@@ -434,11 +436,11 @@ public class Menu : MonoBehaviour
             GUI.EndGroup();
         }
 
-        if (Obecnepolozenie == "Zapisz gre")
+        if (Obecnepolozenie == "Save")
         {
 
             GUI.BeginGroup(PolozenieUstawien);
-            GUI.Box(new Rect(0, 0, 220, 80), "Gra zostala zapisna");
+            GUI.Box(new Rect(0, 0, 220, 80), "Game have save"))
             if (GUI.Button(new Rect(45, 35, 100, 30), "OK"))
             {
 
