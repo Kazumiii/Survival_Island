@@ -4,7 +4,7 @@ using System.Collections;
 public class SpotLeczniczy : MonoBehaviour
 {
 
-
+//Detection collison between player and healthSpot, if payer is inside healthSpoty  player will get more health
     void OnTriggerStay(Collider col)
     {
         if (col.tag == "Player")
