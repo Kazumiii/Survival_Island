@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Parentowanie : MonoBehaviour
 {
-
+//Peretnig things to player in order to player could use it 
 
     public GUIText wiad;
     bool przełącznik = false;
